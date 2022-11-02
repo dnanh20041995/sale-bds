@@ -1,0 +1,108 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/add_customer.dart';
+
+class ListCustomer extends StatefulWidget {
+  ListCustomer({Key? key}) : super(key: key);
+
+  @override
+  State<ListCustomer> createState() => _ListCustomerState();
+}
+
+class _ListCustomerState extends State<ListCustomer> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Danh sách khách hàng",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(
+                      child: TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black)),
+                        labelText: "Tìm kiếm",
+                        labelStyle: TextStyle(fontSize: 18)),
+                  )),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.02,
+                ),
+                Expanded(
+                  flex: 1,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AddCustomer()));
+                      },
+                      child: const Text(
+                        'Thêm ',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                )
+              ],
+            ),
+          ),
+          Dismissible(
+            key: UniqueKey(),
+            onDismissed: (direction) {},
+            background: Container(
+              alignment: Alignment.centerRight,
+              padding: const EdgeInsets.only(right: 20),
+              color: Colors.red,
+              child: const Icon(Icons.delete, color: Colors.white),
+            ),
+            child: Card(
+              color: Color.fromARGB(255, 218, 252, 219),
+              child: ExpansionTile(
+                trailing: Text("Có 3 sản phẩm phù hợp"),
+                textColor: Colors.black,
+                title: Text(
+                  "Anh Ngọc Anh",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text("tìm nhà Lê Chân"),
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("2.5 tỷ"),
+                      Text("Lê chân"),
+                      Text("50m"),
+                      Text("hướng Đông"),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.search,
+                            color: Colors.blue,
+                          )),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.phone,
+                            color: Colors.blue,
+                          ))
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
