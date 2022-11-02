@@ -209,7 +209,7 @@ class _AddCustomerState extends State<AddCustomer> {
                     height: 10,
                   ),
                   CustomButton(
-                      text: 'Thêm khách hàng',
+                      text: 'THÊM',
                       onTap: () {
                         //addData();
                         print(listData.listProperty.isNotEmpty);
