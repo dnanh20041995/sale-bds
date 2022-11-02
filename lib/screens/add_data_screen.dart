@@ -115,7 +115,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
             ),
             title: const Text(
               "Thêm sản phẩm",
-              style: TextStyle(),
+              style: TextStyle(color: Colors.white),
             ),
             centerTitle: true,
           )),

@@ -12,12 +12,26 @@ class _ListCustomerState extends State<ListCustomer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Danh sách khách hàng",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+      appBar: PreferredSize(
+          preferredSize:
+              Size.fromHeight(MediaQuery.of(context).size.height * 0.07),
+          child: AppBar(
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Color.fromARGB(255, 29, 201, 192),
+                Color.fromARGB(255, 125, 221, 216)
+              ], stops: [
+                0.5,
+                1.0
+              ])),
+            ),
+            title: const Text(
+              "Danh sách khách hàng",
+              style: TextStyle(color: Colors.white),
+            ),
+            centerTitle: true,
+          )),
       body: Column(
         children: [
           Padding(
