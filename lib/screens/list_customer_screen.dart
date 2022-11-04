@@ -45,7 +45,7 @@ class _ListCustomerState extends State<ListCustomer> {
                       child: TextFormField(
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
+                            borderSide: BorderSide(color: Colors.blue)),
                         labelText: "Tìm kiếm",
                         labelStyle: TextStyle(fontSize: 18)),
                   )),
@@ -54,7 +54,7 @@ class _ListCustomerState extends State<ListCustomer> {
                   width: MediaQuery.of(context).size.width * 0.02,
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
@@ -63,7 +63,8 @@ class _ListCustomerState extends State<ListCustomer> {
                                 builder: (context) => AddCustomer()));
                       },
                       child: const Text(
-                        'Thêm ',
+                        'Thêm mới',
+                        maxLines: 1,
                         style: TextStyle(color: Colors.white),
                       )),
                 )
@@ -82,7 +83,17 @@ class _ListCustomerState extends State<ListCustomer> {
             child: Card(
               color: Color.fromARGB(255, 218, 252, 219),
               child: ExpansionTile(
-                trailing: Text("Có 3 sản phẩm phù hợp"),
+                trailing: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Có 3 sản phẩm phù hợp"),
+                    Text('Cuộc hẹn: 15h 12/12/2022',
+                        style: const TextStyle(
+                          color: Colors.red,
+                        ))
+                  ],
+                ),
                 textColor: Colors.black,
                 title: Text(
                   "Anh Ngọc Anh",
@@ -100,14 +111,16 @@ class _ListCustomerState extends State<ListCustomer> {
                       IconButton(
                           onPressed: () {},
                           icon: Icon(
-                            Icons.search,
-                            color: Colors.blue,
+                            Icons.list_alt_rounded,
+                            color: Colors.green,
+                            size: 30,
                           )),
                       IconButton(
                           onPressed: () {},
                           icon: Icon(
                             Icons.phone,
                             color: Colors.blue,
+                            size: 30,
                           ))
                     ],
                   ),
